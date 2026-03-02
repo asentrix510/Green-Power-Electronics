@@ -3,7 +3,7 @@ import { CheckCircle, Zap, Shield, Factory, Cpu, Settings } from "lucide-react";
 
 export default function About() {
   const features = [
-    { text: "CPRI Type Tested Designs", icon: Shield },
+    { text: "CPRI Approved", icon: Shield },
     { text: "Premium Components Only", icon: Zap },
     { text: "On-Site Commissioning", icon: Factory },
     { text: "Custom PLC Programming", icon: Cpu }
@@ -40,13 +40,14 @@ export default function About() {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <h3 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">
-              Green Power <br />
-              <span className="text-slate-700">Electronics</span>
+            <h3 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter">
+              <span style={{color: '#10B981'}}>Green</span>{' '}
+              <span style={{color: '#EF4444'}}>Power</span> <br />
+              <span className="text-2xl md:text-4xl" style={{color: '#3B82F6'}}>Electronics & Allied</span>
             </h3>
 
             <p className="text-slate-400 text-lg mb-10 leading-relaxed border-l-2 border-emerald-500 pl-6" style={{borderLeftColor: '#CDFF00'}}>
-              Headquartered in Bhubaneswar’s Mancheswar Industrial Estate, we engineered the standard for electrical control systems since 1998. Led by Mr. N.K. Kumar, our team bridges the gap between raw power and intelligent automation.
+              Headquartered in Bhubaneswar’s Mancheswar Industrial Estate, we engineered the standard for electrical control systems since 1998. Led by Mr. N.K. Kar, our team bridges the gap between raw power and intelligent automation.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">

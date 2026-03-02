@@ -30,13 +30,7 @@ const products = [
     features: ["Auto-Start Logic", "Engine Monitoring"],
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=400"
   },
-  {
-    icon: Monitor,
-    title: "Display Boards",
-    description: "Industrial LED display boards for production tracking and parameter monitoring.",
-    features: ["High Visibility", "Real-time Data Logging"],
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=400"
-  },
+
   {
     icon: Wrench,
     title: "Maintenance Services",
@@ -48,8 +42,8 @@ const products = [
 
 export default function Products() {
   return (
-    <motion.section 
-      id="products" 
+    <motion.section
+      id="products"
       className="py-24 bg-slate-900 text-white overflow-hidden relative"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +51,7 @@ export default function Products() {
       transition={{ duration: 0.8 }}
     >
       {/* Animated Background Gradient */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none"
         initial={{ backgroundPosition: "0% 50%" }}
         animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
@@ -75,7 +69,7 @@ export default function Products() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-sm font-bold uppercase tracking-[0.3em] mb-4" style={{color: '#CDFF00'}}>
+          <h2 className="text-sm font-bold uppercase tracking-[0.3em] mb-4" style={{ color: '#CDFF00' }}>
             Product Catalog
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold">Comprehensive Power Solutions</h3>
@@ -97,8 +91,8 @@ export default function Products() {
           {[...products, ...products].map((product, index) => {
             const Icon = product.icon;
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="inline-block w-[350px] mx-4 flex-shrink-0"
               >
                 <div className="bg-slate-800/50 rounded-3xl border border-slate-700 transition-all group cursor-pointer overflow-hidden hover:shadow-2xl" style={{
@@ -110,7 +104,7 @@ export default function Products() {
                   e.currentTarget.style.borderColor = '';
                   e.currentTarget.style.boxShadow = '';
                 }}>
-                  
+
                   {/* Image Section */}
                   <div className="relative h-48 overflow-hidden bg-slate-800">
                     <img
@@ -153,7 +147,7 @@ export default function Products() {
       </div>
 
       {/* Flowing Wave Divider */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Heart, Facebook, Linkedin, MessageCircle } from "lucide-react";
+import { Facebook, Linkedin, MessageCircle } from "lucide-react";
+import logo from "../assets/images/Logo.png";
 
 export default function Footer() {
   return (
@@ -26,13 +27,21 @@ export default function Footer() {
             viewport={{ once: true }}
             className="col-span-2"
           >
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="p-1 rounded" style={{background: 'linear-gradient(135deg, #CDFF00, #9FFF00)'}}>
-                <Heart className="text-black" size={14} fill="currentColor" />
+            <div className="flex items-center space-x-3 mb-6">
+              <img 
+                src={logo} 
+                alt="Green Power Electronics Logo" 
+                className="h-10 w-auto object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="font-bold tracking-tight text-lg">
+                  <span style={{color: '#10B981'}}>GREEN</span>{' '}
+                  <span style={{color: '#EF4444'}}>POWER</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-wider font-bold opacity-80" style={{color: '#3B82F6'}}>
+                  Electronics & Allied
+                </span>
               </div>
-              <span className="text-white font-bold tracking-tight">
-                GREEN POWER ELECTRONICS
-              </span>
             </div>
             <p className="max-w-sm text-sm leading-relaxed mb-6 text-slate-400">
               Empowering Odisha's industrial landscape with sustainable and high-efficiency power electronics and automation solutions.

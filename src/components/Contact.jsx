@@ -90,8 +90,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-white">Call Us</p>
-                    <p className="text-sm">+91 80476 90430 / +91 94371 45437</p>
-                    <p className="text-slate-500 text-xs">Mon-Sat: 09:30 AM - 06:30 PM</p>
+                    <p className="text-sm">+91 89080 15160/ 9937835160</p>
+                    <p className="text-slate-500 text-xs">Mon-Sat: 09:00 AM - 09:00 PM</p>
                   </div>
                 </motion.div>
 
@@ -104,7 +104,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-white">Email Us</p>
-                    <p className="text-sm">greenpowerelectronics@gmail.com</p>
+                    <p className="text-sm">greenpower.nk@gmail.com</p>
                   </div>
                 </motion.div>
               </div>

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import logo from "../assets/images/Logo.png";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -49,20 +50,24 @@ export default function Navbar() {
             className="flex items-center space-x-3 cursor-pointer group"
           >
             <motion.div 
-              whileHover={{ rotate: 180 }}
-              className="p-2 rounded-xl"
-              style={{background: 'linear-gradient(135deg, #CDFF00, #9FFF00)', boxShadow: '0 0 20px rgba(205, 255, 0, 0.3)'}}
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3"
             >
-              <Zap className="text-black fill-current" size={20} />
+              <img 
+                src={logo} 
+                alt="Green Power Electronics Logo" 
+                className="h-12 w-auto object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl font-black tracking-tighter block leading-none">
+                  <span style={{color: '#10B981'}}>GREEN</span>{' '}
+                  <span style={{color: '#EF4444'}}>POWER</span>
+                </span>
+                <span className="text-[9px] uppercase tracking-[0.3em] font-bold opacity-80" style={{color: '#3B82F6'}}>
+                  Electronics & Allied
+                </span>
+              </div>
             </motion.div>
-            <div className="flex flex-col">
-              <span className="text-xl font-black tracking-tighter text-white block leading-none">
-                GREEN POWER
-              </span>
-              <span className="text-[9px] uppercase tracking-[0.3em] font-bold opacity-80" style={{color: '#CDFF00'}}>
-                Electronics & Allied
-              </span>
-            </div>
           </motion.div>
 
           {/* Desktop Menu with Layout Transitions */}
@@ -79,7 +84,10 @@ export default function Navbar() {
                 href={`#${item.toLowerCase()}`}
                 onHoverStart={() => setHoveredItem(item)}
                 onHoverEnd={() => setHoveredItem(null)}
-                className="relative px-5 py-2 text-xs font-bold uppercase tracking-widest text-slate-300 hover:text-white transition-colors"
+                className="relative px-5 py-2 text-xs font-bold uppercase tracking-widest transition-colors"
+                style={{
+                  color: hoveredItem === item ? '#000' : 'rgb(203, 213, 225)'
+                }}
               >
                 <span className="relative z-10">{item}</span>
                 
