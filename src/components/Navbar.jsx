@@ -50,15 +50,16 @@ export default function Navbar() {
           >
             <motion.div 
               whileHover={{ rotate: 180 }}
-              className="bg-emerald-600 p-2 rounded-xl shadow-[0_0_20px_rgba(5,150,105,0.3)]"
+              className="p-2 rounded-xl"
+              style={{background: 'linear-gradient(135deg, #CDFF00, #9FFF00)', boxShadow: '0 0 20px rgba(205, 255, 0, 0.3)'}}
             >
-              <Zap className="text-white fill-current" size={20} />
+              <Zap className="text-black fill-current" size={20} />
             </motion.div>
             <div className="flex flex-col">
               <span className="text-xl font-black tracking-tighter text-white block leading-none">
                 GREEN POWER
               </span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-emerald-500 font-bold opacity-80">
+              <span className="text-[9px] uppercase tracking-[0.3em] font-bold opacity-80" style={{color: '#CDFF00'}}>
                 Electronics & Allied
               </span>
             </div>
@@ -86,7 +87,8 @@ export default function Navbar() {
                 {hoveredItem === item && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-emerald-600 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.4)]"
+                    className="absolute inset-0 rounded-full"
+                    style={{background: 'linear-gradient(135deg, #CDFF00, #9FFF00)', boxShadow: '0 0 15px rgba(205, 255, 0, 0.4)'}}
                     transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                   />
                 )}
@@ -130,7 +132,12 @@ export default function Navbar() {
                   initial={{ x: 50, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.1 + 0.2 }}
-                  className="block text-4xl font-black text-slate-100 hover:text-emerald-500 transition-colors uppercase"
+                  className="block text-4xl font-black text-slate-100 transition-colors uppercase"
+                  style={{
+                    transition: 'color 0.3s'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#CDFF00'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = ''}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item}

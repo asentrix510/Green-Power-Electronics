@@ -22,12 +22,19 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-slate-950 relative overflow-hidden">
+    <motion.section 
+      id="about" 
+      className="py-24 bg-slate-950 relative overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
+
           {/* Left: Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -37,30 +44,28 @@ export default function About() {
               Green Power <br />
               <span className="text-slate-700">Electronics</span>
             </h3>
-            
-            <p className="text-slate-400 text-lg mb-10 leading-relaxed border-l-2 border-emerald-500 pl-6">
+
+            <p className="text-slate-400 text-lg mb-10 leading-relaxed border-l-2 border-emerald-500 pl-6" style={{borderLeftColor: '#CDFF00'}}>
               Headquartered in Bhubaneswar’s Mancheswar Industrial Estate, we engineered the standard for electrical control systems since 1998. Led by Mr. N.K. Kumar, our team bridges the gap between raw power and intelligent automation.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
               {features.map((f, i) => (
                 <div key={i} className="flex items-center space-x-3 group">
-                  <f.icon className="text-emerald-500 group-hover:scale-110 transition-transform" size={20} />
+                  <f.icon className="text-lime-400 group-hover:scale-110 transition-transform" size={20} />
                   <span className="text-slate-300 font-bold text-xs uppercase tracking-widest">{f.text}</span>
                 </div>
               ))}
             </div>
 
-            <button className="px-8 py-4 bg-transparent border border-emerald-500/30 text-emerald-500 font-bold uppercase tracking-widest text-xs hover:bg-emerald-500 hover:text-white transition-all rounded-full">
-              Download Profile PDF
-            </button>
+
           </motion.div>
 
           {/* Right: Dual Vertical Infinite Scroll */}
           <div className="lg:w-1/2 h-[600px] flex gap-4 overflow-hidden mask-fade-y relative">
-            
+
             {/* Column 1 - Scrolling Down */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -1200] }}
               transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
               className="flex flex-col gap-4 w-1/2"
@@ -71,7 +76,7 @@ export default function About() {
             </motion.div>
 
             {/* Column 2 - Scrolling Up */}
-            <motion.div 
+            <motion.div
               animate={{ y: [-1200, 0] }}
               transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
               className="flex flex-col gap-4 w-1/2 pt-20"
@@ -83,14 +88,34 @@ export default function About() {
 
             {/* Glass Badge */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-               <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 p-8 rounded-full shadow-2xl">
-                  <Settings className="text-emerald-500 animate-spin-slow" size={48} />
-               </div>
+              <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 p-8 rounded-full shadow-2xl">
+                <Settings className="text-lime-400 animate-spin-slow" size={48} />
+              </div>
             </div>
           </div>
 
         </div>
       </div>
+
+      {/* Flowing Wave Divider */}
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <svg className="absolute bottom-0 w-full h-24" preserveAspectRatio="none" viewBox="0 0 1440 100">
+          <motion.path
+            d="M0,50 C240,80 480,20 720,50 C960,80 1200,20 1440,50 L1440,100 L0,100 Z"
+            fill="rgb(15, 23, 42)"
+            initial={{ pathLength: 0, opacity: 0 }}
+            whileInView={{ pathLength: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        </svg>
+      </motion.div>
 
       <style jsx>{`
         .mask-fade-y {
@@ -104,6 +129,6 @@ export default function About() {
           to { transform: rotate(360deg); }
         }
       `}</style>
-    </section>
+    </motion.section>
   );
 }

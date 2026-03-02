@@ -13,10 +13,45 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-950">
+    <motion.section 
+      id="contact" 
+      className="py-24 bg-slate-950 relative"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Animated Particles */}
+      <motion.div 
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-lime-400/20 rounded-full"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + i * 10}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.2, 0.5, 0.2],
+            }}
+            transition={{
+              duration: 3 + i,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.5,
+            }}
+          />
+        ))}
+      </motion.div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 rounded-[3rem] p-8 md:p-16 border border-slate-800 shadow-2xl overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -mr-32 -mt-32 opacity-50"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl -mr-32 -mt-32 opacity-50" style={{background: 'radial-gradient(circle, rgba(205, 255, 0, 0.1), transparent)'}}></div>
 
           <div className="flex flex-col lg:flex-row gap-16 relative z-10">
             <motion.div
@@ -33,8 +68,8 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   className="flex items-start space-x-4"
                 >
-                  <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-emerald-500" />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{background: 'rgba(205, 255, 0, 0.1)'}}>
+                    <MapPin className="text-lime-400" />
                   </div>
                   <div>
                     <p className="font-bold text-white">Our Location</p>
@@ -50,8 +85,8 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   className="flex items-start space-x-4"
                 >
-                  <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-emerald-500" />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{background: 'rgba(205, 255, 0, 0.1)'}}>
+                    <Phone className="text-lime-400" />
                   </div>
                   <div>
                     <p className="font-bold text-white">Call Us</p>
@@ -64,8 +99,8 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   className="flex items-start space-x-4"
                 >
-                  <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-emerald-500" />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{background: 'rgba(205, 255, 0, 0.1)'}}>
+                    <Mail className="text-lime-400" />
                   </div>
                   <div>
                     <p className="font-bold text-white">Email Us</p>
@@ -113,7 +148,18 @@ export default function Contact() {
                         whileFocus={{ scale: 1.02 }}
                         type="text"
                         required
-                        className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm text-slate-200"
+                        className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
+                        style={{
+                          transition: 'all 0.3s'
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = '#CDFF00';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(205, 255, 0, 0.2)';
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = '';
+                          e.currentTarget.style.boxShadow = '';
+                        }}
                         placeholder="John Doe"
                       />
                     </div>
@@ -124,7 +170,18 @@ export default function Contact() {
                       <motion.input
                         whileFocus={{ scale: 1.02 }}
                         type="text"
-                        className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm text-slate-200"
+                        className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
+                        style={{
+                          transition: 'all 0.3s'
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = '#CDFF00';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(205, 255, 0, 0.2)';
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = '';
+                          e.currentTarget.style.boxShadow = '';
+                        }}
                         placeholder="Acme Corp"
                       />
                     </div>
@@ -136,7 +193,18 @@ export default function Contact() {
                     </label>
                     <motion.select
                       whileFocus={{ scale: 1.02 }}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm text-slate-200"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
+                      style={{
+                        transition: 'all 0.3s'
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = '#CDFF00';
+                        e.currentTarget.style.boxShadow = '0 0 0 2px rgba(205, 255, 0, 0.2)';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = '';
+                        e.currentTarget.style.boxShadow = '';
+                      }}
                     >
                       <option>MCC / APFC Panel</option>
                       <option>PLC / Automation</option>
@@ -152,7 +220,18 @@ export default function Contact() {
                     <motion.textarea
                       whileFocus={{ scale: 1.02 }}
                       rows="4"
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm text-slate-200"
+                      className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
+                      style={{
+                        transition: 'all 0.3s'
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = '#CDFF00';
+                        e.currentTarget.style.boxShadow = '0 0 0 2px rgba(205, 255, 0, 0.2)';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = '';
+                        e.currentTarget.style.boxShadow = '';
+                      }}
                       placeholder="Describe your technical specifications..."
                     />
                   </div>
@@ -161,7 +240,8 @@ export default function Contact() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full bg-emerald-600 text-white py-4 rounded-xl font-bold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-900/50 flex items-center justify-center gap-2"
+                    className="w-full text-black py-4 rounded-xl font-bold transition-colors shadow-lg flex items-center justify-center gap-2"
+                    style={{background: 'linear-gradient(135deg, #CDFF00, #9FFF00)', boxShadow: '0 10px 30px rgba(205, 255, 0, 0.3)'}}
                   >
                     <Send size={18} />
                     Send Inquiry
@@ -171,7 +251,8 @@ export default function Contact() {
                     <motion.p
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-center text-xs text-emerald-400 font-bold"
+                      className="text-center text-xs font-bold"
+                      style={{color: '#CDFF00'}}
                     >
                       Message sent successfully!
                     </motion.p>
@@ -182,6 +263,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

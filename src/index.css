@@ -2,6 +2,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for fixed navbar */
+}
+
 body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
