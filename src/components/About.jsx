@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import { CheckCircle, Zap, Shield, Factory, Cpu, Settings } from "lucide-react";
+import { Shield, Zap, Factory, Cpu, Settings } from "lucide-react";
+import abt1 from "../assets/images/abt1.jpg";
+import abt2 from "../assets/images/abt2.jpg";
+import abt3 from "../assets/images/abt3.jpg";
+import abt4 from "../assets/images/abt4.jpg";
+import abt5 from "../assets/images/abt5.jpg";
+import abt6 from "../assets/images/abt6.jpg";
 
 export default function About() {
   const features = [
@@ -9,17 +15,8 @@ export default function About() {
     { text: "Custom PLC Programming", icon: Cpu }
   ];
 
-  const column1 = [
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=400",
-  ];
-
-  const column2 = [
-    "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1565608438257-fac3c27beb36?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=400",
-  ];
+  const column1 = [abt1, abt2, abt3];
+  const column2 = [abt4, abt5, abt6];
 
   return (
     <motion.section 
@@ -47,7 +44,7 @@ export default function About() {
             </h3>
 
             <p className="text-slate-400 text-lg mb-10 leading-relaxed border-l-2 border-emerald-500 pl-6" style={{borderLeftColor: '#CDFF00'}}>
-              Headquartered in Bhubaneswar’s Mancheswar Industrial Estate, we engineered the standard for electrical control systems since 1998. Led by Mr. N.K. Kar, our team bridges the gap between raw power and intelligent automation.
+              Headquartered in Bhubaneswar’s Mancheswar Industrial Estate, we engineered the standard for electrical control systems since 2007. Led by Mr. N.K. Kar, our team bridges the gap between raw power and intelligent automation.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
@@ -118,7 +115,7 @@ export default function About() {
         </svg>
       </motion.div>
 
-      <style jsx>{`
+      <style>{`
         .mask-fade-y {
           mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
         }

@@ -4,11 +4,37 @@ import { useState } from "react";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    requirement: 'MCC / APFC Panel',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Proposal Request: ${formData.requirement}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Company: ${formData.company}\n` +
+      `Requirement Type: ${formData.requirement}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:greenpower.nk@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Show success message
     setFormStatus(true);
-    e.target.reset();
     setTimeout(() => setFormStatus(false), 3000);
   };
 
@@ -147,7 +173,10 @@ export default function Contact() {
                       <motion.input
                         whileFocus={{ scale: 1.02 }}
                         type="text"
+                        name="name"
                         required
+                        value={formData.name}
+                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
                         style={{
                           transition: 'all 0.3s'
@@ -170,6 +199,9 @@ export default function Contact() {
                       <motion.input
                         whileFocus={{ scale: 1.02 }}
                         type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
                         className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
                         style={{
                           transition: 'all 0.3s'
@@ -193,6 +225,9 @@ export default function Contact() {
                     </label>
                     <motion.select
                       whileFocus={{ scale: 1.02 }}
+                      name="requirement"
+                      value={formData.requirement}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
                       style={{
                         transition: 'all 0.3s'
@@ -220,6 +255,9 @@ export default function Contact() {
                     <motion.textarea
                       whileFocus={{ scale: 1.02 }}
                       rows="4"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl focus:outline-none text-sm text-slate-200"
                       style={{
                         transition: 'all 0.3s'

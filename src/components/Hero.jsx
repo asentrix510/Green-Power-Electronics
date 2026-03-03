@@ -3,8 +3,8 @@ import heroImage from "../assets/images/gpe_hero.jpg";
 
 export default function Hero() {
   return (
-    <motion.section 
-      id="home" 
+    <motion.section
+      id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -17,10 +17,10 @@ export default function Hero() {
           alt="Industrial Electrical Factory"
           className="w-full h-full object-cover"
         />
-        
+
         {/* Dark overlay with gradient - reduced opacity for better visibility */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-slate-950/75 to-slate-900/70"></div>
-        
+
         {/* Animated grid overlay */}
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: 'linear-gradient(rgba(205, 255, 0, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(205, 255, 0, 0.3) 1px, transparent 1px)',
@@ -30,15 +30,15 @@ export default function Hero() {
 
       {/* Floating particles effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute w-2 h-2 bg-lime-400/30 rounded-full animate-pulse" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
-        <div className="absolute w-3 h-3 bg-lime-300/20 rounded-full animate-pulse" style={{top: '60%', left: '80%', animationDelay: '1s'}}></div>
-        <div className="absolute w-2 h-2 bg-lime-400/25 rounded-full animate-pulse" style={{top: '40%', left: '70%', animationDelay: '2s'}}></div>
+        <div className="absolute w-2 h-2 bg-lime-400/30 rounded-full animate-pulse" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
+        <div className="absolute w-3 h-3 bg-lime-300/20 rounded-full animate-pulse" style={{ top: '60%', left: '80%', animationDelay: '1s' }}></div>
+        <div className="absolute w-2 h-2 bg-lime-400/25 rounded-full animate-pulse" style={{ top: '40%', left: '70%', animationDelay: '2s' }}></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             className="text-white space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -52,6 +52,14 @@ export default function Hero() {
               <span className="text-lime-400 text-sm font-bold tracking-wide uppercase">
                 ISO 9001:2015 Certified
               </span>
+              <svg className="w-4 h-4 text-lime-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="text-lime-400 text-sm font-bold tracking-wide uppercase">
+                CPRI Approved
+              </span>
+
+
             </div>
 
             {/* Main Heading */}
@@ -59,12 +67,12 @@ export default function Hero() {
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
                 <span className="block text-white">Powering</span>
                 <span className="block text-white">Industries with</span>
-                <span className="block" style={{color: '#CDFF00'}}>
+                <span className="block" style={{ color: '#CDFF00' }}>
                   Precision & Innovation
                 </span>
               </h1>
-              
-              <div className="h-1 w-24 rounded-full" style={{background: 'linear-gradient(to right, #CDFF00, #9FFF00)'}}></div>
+
+              <div className="h-1 w-24 rounded-full" style={{ background: 'linear-gradient(to right, #CDFF00, #9FFF00)' }}></div>
             </div>
 
             {/* Description */}
@@ -77,7 +85,7 @@ export default function Hero() {
               <a
                 href="#products"
                 className="group relative inline-flex items-center gap-2 text-black px-8 py-4 rounded-xl font-bold hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                style={{background: 'linear-gradient(to right, #CDFF00, #9FFF00)', boxShadow: '0 0 30px rgba(205, 255, 0, 0.3)'}}
+                style={{ background: 'linear-gradient(to right, #CDFF00, #9FFF00)', boxShadow: '0 0 30px rgba(205, 255, 0, 0.3)' }}
               >
                 <span>View Our Products</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +95,7 @@ export default function Hero() {
               <a
                 href="#contact"
                 className="group inline-flex items-center gap-2 border-2 text-white px-8 py-4 rounded-xl font-bold backdrop-blur-sm transition-all duration-300"
-                style={{borderColor: 'rgba(205, 255, 0, 0.5)'}}
+                style={{ borderColor: 'rgba(205, 255, 0, 0.5)' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'rgba(205, 255, 0, 0.1)';
                   e.currentTarget.style.borderColor = '#CDFF00';
@@ -122,14 +130,14 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Content - Stats Cards */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 gap-6"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{color: '#CDFF00'}}>
+              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
                 20+
               </div>
               <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
@@ -138,8 +146,8 @@ export default function Hero() {
             </div>
 
             <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{color: '#CDFF00'}}>
-                1000+
+              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
+                5000+
               </div>
               <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
                 Panels Delivered
@@ -147,7 +155,7 @@ export default function Hero() {
             </div>
 
             <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{color: '#CDFF00'}}>
+              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
                 24/7
               </div>
               <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
@@ -156,7 +164,7 @@ export default function Hero() {
             </div>
 
             <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{color: '#CDFF00'}}>
+              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
                 100%
               </div>
               <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">

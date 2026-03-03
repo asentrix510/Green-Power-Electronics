@@ -30,7 +30,20 @@ const products = [
     features: ["Auto-Start Logic", "Engine Monitoring"],
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=400"
   },
-
+  {
+    icon: Wrench,
+    title: "RTCC Panels",
+    description: "Remote Tap Changer Control panels designed for precise voltage regulation and remote monitoring of power transformers.",
+    features: ["Automatic/Manual AVR Mode", "OLTC Position Indication"],
+    image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    icon: Zap, // or Activity / Lock
+    title: "CR Panels",
+    description: "Control and Relay panels engineered for the protection, signaling, and control of high-voltage electrical networks.",
+    features: ["Numerical Relay Integration", "Mimic Diagram Display"],
+    image: "https://images.unsplash.com/photo-1454165833020-0937a4c7f070?auto=format&fit=crop&q=80&w=600"
+  },
   {
     icon: Wrench,
     title: "Maintenance Services",
