@@ -217,4 +217,4 @@ The contact form sends emails directly to `greenpower.nk@gmail.com` using Nodema
 
 Built with ❤️ for Green Power Electronics & Allied Industries
 
-For support or inquiries, contact: greenpower.nk@gmail.com
+
