@@ -1,27 +1,45 @@
 import { motion } from "framer-motion";
-import { Grid3x3, RefreshCw, Cpu, Zap, Monitor, Wrench } from "lucide-react";
-
+import { Grid3x3, RefreshCw, Cpu, Zap, Wrench, Layers, Droplets } from "lucide-react";
+import mccImage from "../assets/images/mcc.jpg";
+import apfcImage from "../assets/images/apfc.jpg";
+import plcImage from "../assets/images/plc.jpg"
+import pdbImage from "../assets/images/pdb.jpg"
+import stpImage from "../assets/images/stp.jpg"
 const products = [
   {
     icon: Grid3x3,
     title: "MCC Panels",
     description: "Motor Control Centers designed for safe and centralized control of electric motors in industrial environments.",
     features: ["Fully Compartmentalized", "DOL & Star-Delta Starters"],
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80&w=400"
+    image: mccImage
   },
   {
     icon: RefreshCw,
     title: "APFC Panels",
     description: "Automatic Power Factor Correction panels to optimize energy consumption and reduce electricity bills.",
     features: ["Microprocessor Control", "High-Quality Capacitors"],
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=400"
+    image: apfcImage
   },
   {
     icon: Cpu,
     title: "PLC Panels",
     description: "Customized Programmable Logic Controller panels for automated manufacturing and process control.",
     features: ["HMI Integration", "Multi-vendor PLC Support"],
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=400"
+    image: plcImage
+  },
+  {
+    icon: Layers,
+    title: "PDB Panels",
+    description: "Power Distribution Boards for efficient and safe distribution of electrical power across multiple circuits.",
+    features: ["MCB/MCCB Protection", "Modular Design"],
+    image: pdbImage
+  },
+  {
+    icon: Droplets,
+    title: "STP Panels",
+    description: "Sewage Treatment Plant control panels for automated monitoring and control of wastewater treatment processes.",
+    features: ["Level Control Automation", "Multi-Pump Sequencing"],
+    image: stpImage
   },
   {
     icon: Zap,
@@ -38,7 +56,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=400"
   },
   {
-    icon: Zap, // or Activity / Lock
+    icon: Zap,
     title: "CR Panels",
     description: "Control and Relay panels engineered for the protection, signaling, and control of high-voltage electrical networks.",
     features: ["Numerical Relay Integration", "Mimic Diagram Display"],
