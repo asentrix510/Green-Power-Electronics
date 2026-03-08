@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Grid3x3, RefreshCw, Cpu, Zap, Wrench, Layers, Droplets } from "lucide-react";
 import mccImage from "../assets/images/mcc.jpg";
 import apfcImage from "../assets/images/apfc.jpg";
 import plcImage from "../assets/images/plc.jpg"
 import pdbImage from "../assets/images/pdb.jpg"
 import stpImage from "../assets/images/stp.jpg"
+import rtccImage from "../assets/images/rtcc.jpg"
+import crImage from "../assets/images/cr.jpg"
 const products = [
   {
     icon: Grid3x3,
@@ -41,26 +44,20 @@ const products = [
     features: ["Level Control Automation", "Multi-Pump Sequencing"],
     image: stpImage
   },
-  {
-    icon: Zap,
-    title: "AMF Panels",
-    description: "Automatic Mains Failure panels for seamless transition between utility power and backup generators.",
-    features: ["Auto-Start Logic", "Engine Monitoring"],
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=400"
-  },
+
   {
     icon: Wrench,
     title: "RTCC Panels",
     description: "Remote Tap Changer Control panels designed for precise voltage regulation and remote monitoring of power transformers.",
     features: ["Automatic/Manual AVR Mode", "OLTC Position Indication"],
-    image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=400"
+    image: rtccImage
   },
   {
     icon: Zap,
     title: "CR Panels",
     description: "Control and Relay panels engineered for the protection, signaling, and control of high-voltage electrical networks.",
     features: ["Numerical Relay Integration", "Mimic Diagram Display"],
-    image: "https://images.unsplash.com/photo-1454165833020-0937a4c7f070?auto=format&fit=crop&q=80&w=600"
+    image: crImage
   },
   {
     icon: Wrench,
@@ -72,6 +69,8 @@ const products = [
 ];
 
 export default function Products() {
+  const [isPaused, setIsPaused] = useState(false);
+
   return (
     <motion.section
       id="products"
@@ -108,16 +107,28 @@ export default function Products() {
       </div>
 
       {/* --- Infinite Sideways Scroll Section --- */}
-      <div className="relative flex overflow-hidden">
-        <motion.div
-          className="flex whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            ease: "linear",
-            duration: 30, // Adjust speed here
-            repeat: Infinity,
-          }}
-        >
+      <style>{`
+        @keyframes scrollMarquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-content {
+          animation: scrollMarquee 30s linear infinite;
+          will-change: transform;
+        }
+        .marquee-paused {
+          animation-play-state: paused;
+        }
+      `}</style>
+      <div
+        className="relative flex overflow-hidden cursor-grab active:cursor-grabbing select-none"
+        onMouseDown={() => setIsPaused(true)}
+        onMouseUp={() => setIsPaused(false)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
+        <div className={`flex whitespace-nowrap marquee-content ${isPaused ? 'marquee-paused' : ''}`}>
           {/* We render the list twice for a seamless loop */}
           {[...products, ...products].map((product, index) => {
             const Icon = product.icon;
@@ -174,7 +185,7 @@ export default function Products() {
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
       {/* Flowing Wave Divider */}

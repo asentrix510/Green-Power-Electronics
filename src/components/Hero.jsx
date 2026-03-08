@@ -131,43 +131,43 @@ export default function Hero() {
 
           {/* Right Content - Stats Cards */}
           <motion.div
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-4 sm:gap-6"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-5 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-2 sm:mb-3" style={{ color: '#CDFF00' }}>
                 20+
               </div>
-              <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
+              <p className="text-slate-300 font-semibold text-xs sm:text-sm uppercase tracking-wider">
                 Years of Excellence
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-5 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-2 sm:mb-3" style={{ color: '#CDFF00' }}>
                 5000+
               </div>
-              <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
+              <p className="text-slate-300 font-semibold text-xs sm:text-sm uppercase tracking-wider">
                 Panels Delivered
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-5 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-2 sm:mb-3" style={{ color: '#CDFF00' }}>
                 24/7
               </div>
-              <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
+              <p className="text-slate-300 font-semibold text-xs sm:text-sm uppercase tracking-wider">
                 Technical Support
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
-              <div className="text-5xl font-black mb-3" style={{ color: '#CDFF00' }}>
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl p-5 sm:p-8 rounded-2xl border border-slate-700/50 hover:border-lime-400/50 transition-all duration-300 hover:scale-105 shadow-xl">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black mb-2 sm:mb-3" style={{ color: '#CDFF00' }}>
                 100%
               </div>
-              <p className="text-slate-300 font-semibold text-sm uppercase tracking-wider">
+              <p className="text-slate-300 font-semibold text-xs sm:text-sm uppercase tracking-wider">
                 Quality Guaranteed
               </p>
             </div>
